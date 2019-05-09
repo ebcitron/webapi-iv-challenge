@@ -37,7 +37,7 @@ usersRouter.get('/:id/posts', async (req, res) => {
 //Add a User
 usersRouter.post('/', upName, async(req,res) => {
     try{
-        const users = await Users.add(req.body);
+        const users = await Users.insert(req.body);
         res.status(201).json(users);
     } catch (error) {
         console.log(error);
